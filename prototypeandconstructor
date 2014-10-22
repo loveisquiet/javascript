@@ -1,0 +1,17 @@
+function AA(name){
+				this.name=name;
+				this.color=["22","44","21"];		
+				}
+			AA.prototype.sayName=function(){
+				alert (this.name);};
+			function BB(name,age){
+				AA.apply(this,[name]);//或者修改为AA.call(this,name);
+			    this.age=age;
+			}
+			BB.prototype=new AA();
+			BB.prototype.sayAge=function(){
+				alert(this.age);};
+			var hehe=new BB("wocao",24);
+			hehe.color.push("red");
+	         hehe.sayName();
+			 hehe.sayAge();	
